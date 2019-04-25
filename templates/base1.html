@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	
+<title>{{title}}</title>
+</head>
+    <body background="/static/fon4s.jpg">
+    <header>
+      <nav class="navbar navbar-dark bg-dark">
+       <a class="navbar-brand" href="/reg">Зарегистрироваться</a>
+       {% if "username" in session %}
+         <a class="navbar-brand" href="/login">{{session['username']}}</a>
+       {% endif %}
+        <a class="navbar-brand" href="/">На главную</a>
+</nav>
+    </header>
+    <!-- Begin page content -->
+    <main role="main" class="container">
+     {% block content %}{% endblock %}
+
+     </main>
+  </body>
+  
+</html>

@@ -1,0 +1,47 @@
+{% extends "base1.html" %}
+{% block content %}
+
+	<form action="" method="post" novalidate class="form-inline mr-auto">
+		<div class="text-center" style="width:100%"> 
+			<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" style="width:50%" name="search1">
+			<button class="btn btn-light btn-rounded btn-sm my-0" type="submit">Поиск</button>
+		</div>
+		<div style="width:100%" class="d-flex justify-content-between">
+		
+				<a href="/news">Добавить статью</a>
+	
+			<div class="dropdown text-right">
+				<button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				Сортировка
+				</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuMenu1">
+				<button class="dropdown-item" type="submit" name="sort" value="asc">A to Z</button>
+				<button class="dropdown-item" type="submit" name="sort" value="desc">Z to A</button>
+				</div>
+			</div>
+		</div>
+	</form>
+	
+	<div class="card-deck">
+	{% for item in news %}
+		
+		<div class="card">
+			<div class="text-center">
+			<img src="{{ item[5] }}"  class="card-img-top" alt="image" style="max-width:70%;">
+			</div>
+			<div class="card-body">
+				<h5 class="card-title">{{ item[1] }}</h5>
+				<p class="card-text">{{ item[2] }}</p>
+			</div>
+			<div class="card-footer">
+				<small class="text-muted">{{ item[4] }}</small>
+			</div>
+		</div>
+		
+	</div>
+	{% endfor %}
+	</div>
+
+
+{% endblock %}
+
